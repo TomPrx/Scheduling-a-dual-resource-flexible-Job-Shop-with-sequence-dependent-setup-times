@@ -5,17 +5,17 @@ They are 79 instances for each class of instance A,B,C,D for a total of 316 inst
 The format of instances is as follows, for notations users are referred to the paper:
 
 ## Instance format description
-1. Line 1: instance date in format YYYY-MM-DD, not used
-2. Line 2: $k$, the number of machines
-3. Line 3: $h$, the number of operators
-4. Line 4: $n$, the number of jobs
-5. Line 5: $\tau^{thread}$, duration of the thread pool change (in minutes)
-6. Line 6: $\tau^{config}$, duration of the machine configuration change (in minutes)
-7. Line 7: $\tau^{type}$, duration of the operation type change (in minutes)
-8. Line 8: $\tau^{exp}$, duration of the experience setup (in minutes)
-9. Line $9-(9+k-1)$: list of machines\
+* **Line 1**: instance date in format YYYY-MM-DD, not used
+* **Line 2**: $k$, the number of machines
+* **Line 3**: $h$, the number of operators
+* **Line 4**: $n$, the number of jobs
+* **Line 5**: $\tau^{thread}$, duration of the thread pool change (in minutes)
+* **Line 6**: $\tau^{config}$, duration of the machine configuration change (in minutes)
+* **Line 7**: $\tau^{type}$, duration of the operation type change (in minutes)
+* **Line 8**: $\tau^{exp}$, duration of the experience setup (in minutes)
+* **Line $9:(9+k-1)$**: list of machines\
     For each line: _ma_id_[^1] _nb_config_[^2] $type$[^3]
-11. Starting from line $x=(9+k)$ are the jobs and operations:\
+* **Line $x=(9+k)$**: jobs and operations:\
     For $i=0..(n-1)$:
     * Line $x+1$: _job_id_[^4] _color_id_[^5] _delivery_date_[^6] $d_i$[^7] _nb_op_[^8] OF[^9]
     * For $j=0..(_nb_op_-1)$:
