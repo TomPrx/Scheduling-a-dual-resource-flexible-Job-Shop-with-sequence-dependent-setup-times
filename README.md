@@ -13,7 +13,7 @@ The format of instances is as follows, for notations users are referred to the p
 * **Line 6**: $\tau^{config}$, duration of the machine configuration change (in minutes)
 * **Line 7**: $\tau^{type}$, duration of the operation type change (in minutes)
 * **Line 8**: $\tau^{exp}$, duration of the experience setup (in minutes)
-* **Line $9->(9+k-1)$**: list of machines\
+* **Line $9:(9+k-1)$**: list of machines\
     For each line: _ma_id_[^1] _nb_config_[^2] $type$[^3]
 * **Line $x=(9+k)$**: jobs and operations:\
     For $i=0..(n-1)$:
@@ -49,7 +49,7 @@ The format of instances is as follows, for notations users are referred to the p
 [^11]: nominal workload value of the operation
 [^12]: configuration id required on the machine 
 [^13]: number of compatible machines (_nb_machines_ =$|A_{ij}|$)
-[^14]: number of compatible operators (_nb_operators_=$|B_{ij}|$)
+[^14]: number of compatible operators (_nb_operators_ =$|B_{ij}|$)
 [^15]: operation type, setups occur between successive operations with different types (used to define $\delta_{ijt}$)
 [^16]: number of operations preceding the current operation (_nb_prec_ $=|R_{ij}|$)
 [^17]: id of the operator 
