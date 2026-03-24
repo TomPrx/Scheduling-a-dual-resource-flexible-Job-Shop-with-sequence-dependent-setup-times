@@ -13,7 +13,7 @@ The format of instances is as follows, for notations users are referred to the p
 * **Line 6**: $\tau^{config}$, duration of the machine configuration change (in minutes)
 * **Line 7**: $\tau^{type}$, duration of the operation type change (in minutes)
 * **Line 8**: $\tau^{exp}$, duration of the experience setup (in minutes)
-* **Line $9:(9+k-1)$**: list of machines\
+* **Line $9->(9+k-1)$**: list of machines\
     For each line: _ma_id_[^1] _nb_config_[^2] $type$[^3]
 * **Line $x=(9+k)$**: jobs and operations:\
     For $i=0..(n-1)$:
@@ -22,8 +22,10 @@ The format of instances is as follows, for notations users are referred to the p
         * Line $x+2$: _op_id_[^10] $q_{ij}$[^11] _config_id_[^12] _nb_machines_[^13] _nb_operators_[^14] _operation_type_[^15]
         * Line $x+3$: Preceding operations. The first number identify the number of preceding operations, then the preceding operation ids are listed\
         _nb_prec_[^16] [_op_id_ for l=0.._nb_prec_]
-        * Line $x+4$: List of compatible machines [_ma_id_[^1] for l=9.._nb_machines_]
-        * Line $x+5$: List of compatible operators. 3 numbers for each, _op_id_[^17] $p_{ijh}$[^18] exp[^19]
+        * Line $x+4$: List of compatible machines\
+          [_ma_id_[^1] for l=9.._nb_machines_]
+        * Line $x+5$: List of compatible operators, 3 numbers for each.\
+          _op_id_[^17] $p_{ijh}$[^18] exp[^19]
 
 ---
 ## Notes
