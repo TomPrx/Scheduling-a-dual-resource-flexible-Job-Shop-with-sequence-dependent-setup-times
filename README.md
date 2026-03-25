@@ -5,7 +5,7 @@ They are 79 instances for each class of instance A,B,C,D for a total of 316 inst
 The format of instances is as follows, for notations users are referred to the paper:
 
 ## Instance format description
-* **Line 1**: instance date in format YYYY-MM-DD, not used
+* **Line 1**: instance date in format YYYY-MM-DD (not used)
 * **Line 2**: $k$, the number of machines
 * **Line 3**: $h$, the number of operators
 * **Line 4**: $n$, the number of jobs
@@ -13,18 +13,18 @@ The format of instances is as follows, for notations users are referred to the p
 * **Line 6**: $\tau^{config}$, duration of the machine configuration change (in minutes)
 * **Line 7**: $\tau^{type}$, duration of the operation type change (in minutes)
 * **Line 8**: $\tau^{exp}$, duration of the experience setup (in minutes)
-* **Line $9:(9+k-1)$**: list of machines\
+* **Line $9..(9+k-1)$**: list of machines\
     For each line: _ma_id_[^1] _nb_config_[^2] $type$[^3]
-* **Line $x=(9+k)$**: jobs and operations:\
+* **Line $x=(9+k)..$**: jobs and operations:\
     For $i=0..(n-1)$:
-    * Line $x+1$: _job_id_[^4] _color_id_[^5] _delivery_date_[^6] $d_i$[^7] _nb_op_[^8] OF[^9]
+    * **Line $x+1$**: _job_id_[^4] _color_id_[^5] _delivery_date_[^6] $d_i$[^7] _nb_op_[^8] OF[^9]
     * For $j=0..(_nb_op_-1)$:
-        * Line $x+2$: _op_id_[^10] $q_{ij}$[^11] _config_id_[^12] _nb_machines_[^13] _nb_operators_[^14] _operation_type_[^15]
-        * Line $x+3$: Preceding operations. The first number identify the number of preceding operations, then the preceding operation ids are listed\
+        * **Line $x+2$**: _op_id_[^10] $q_{ij}$[^11] _config_id_[^12] _nb_machines_[^13] _nb_operators_[^14] _operation_type_[^15]
+        * **Line $x+3$**: Preceeding operations. The first number identify the number of preceding operations, then the preceeding operation ids are listed\
         _nb_prec_[^16] [_op_id_ for l=0.._nb_prec_]
-        * Line $x+4$: List of compatible machines\
+        * **Line $x+4$**: List of compatible machines\
           [_ma_id_[^1] for l=9.._nb_machines_]
-        * Line $x+5$: List of compatible operators, 3 numbers for each.\
+        * **Line $x+5$**: List of compatible operators, 3 numbers for each.\
           _op_id_[^17] $p_{ijh}$[^18] exp[^19]
 
 ---
@@ -42,7 +42,7 @@ The format of instances is as follows, for notations users are referred to the p
 [^4]: id of the job ($i$)
 [^5]: id for the thread color of the job, thread change setups occur between different _color_id_
 [^6]: Delivery date of the job in format YYYY-MM-DD 
-[^7]: Due date (in minutes) computed from the instance date and delivery date assuming working hours 
+[^7]: Due date (in minutes) computed from the instance date, delivery date of the jobs and the working hours (see Notes) 
 [^8]: The number of operations in the job ($O_i=0..$_(nb_op-1))_
 [^9]: OF of the job (not used) 
 [^10]: id of the operation ($j$)
